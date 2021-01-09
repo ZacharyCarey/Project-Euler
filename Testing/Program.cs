@@ -3,7 +3,8 @@
 namespace Testing {
 	class Program {
 		static void Main(string[] args) {
-			TestSortedUnion.Test();
+			//TestSortedUnion.Test();
+			TestFibonacci.Test();
 		}
 	}
 }

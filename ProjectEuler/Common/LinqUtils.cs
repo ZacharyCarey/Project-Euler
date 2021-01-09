@@ -1,36 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace ProjectEuler.Common {
-	public static class Utils {
-
-		/// <summary>
-		/// Returns all multiples of the number. !!WARNING!! This method will return infinitely if not stopped externally.
-		/// </summary>
-		/// <param name="number">The number to return multiples of.</param>
-		/// <returns>All multiples of the given number, starting at that number.</returns>
-		public static IEnumerable<int> Multiples(this int number) {
-			int result = number;
-			while (true) {
-				yield return result;
-				result += number;
-			}
-		}
-
-		/// <summary>
-		/// Returns all multiples of the number up to but not including the given limit.
-		/// </summary>
-		/// <param name="number">The number to return multiples of.</param>
-		/// <param name="limit">The number that the multiples should not go above.</param>
-		/// <returns>All multiples of the given number, starting at that number and stopping if the result equals or greater than the limit..</returns>
-		public static IEnumerable<int> Multiples(this int number, int limit) {
-			int result = number;
-			while (result < limit) {
-				yield return result;
-				result += number;
-			}
-		}
+	public static partial class Utils {
 
 		/// <summary>
 		/// A fast union method that only works if both lists are unique values sorted in ascending order.
@@ -45,8 +18,6 @@ namespace ProjectEuler.Common {
 
 			IEnumerator<T> enum1 = source1.GetEnumerator();
 			IEnumerator<T> enum2 = source2.GetEnumerator();
-
-			//bool
 
 			//Both must have at least 1 element to continue
 			if(enum1.MoveNext() && enum2.MoveNext()) {
@@ -83,31 +54,6 @@ namespace ProjectEuler.Common {
 							yield break;
 						}
 					}
-					/*if (compare == 0) {
-						//Both match!
-						T result = enum1.Current;
-						yield return result;
-						do {
-							if (!enum1.MoveNext()) {
-								yield break;
-							}
-						} while (comparer.Compare(enum1.Current, result) == 0);
-						do {
-							if (!enum2.MoveNext()) {
-								yield break;
-							}
-						} while (comparer.Compare(enum2.Current, result) == 0);
-					} else {
-						if (compare < 0) {
-							if (!enum1.MoveNext()) {
-								yield break;
-							}
-						} else {
-							if (!enum1.MoveNext()) {
-								yield break;
-							}
-						}
-					}*/
 				}
 			} 
 		}
