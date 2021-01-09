@@ -4,7 +4,8 @@ namespace Testing {
 	class Program {
 		static void Main(string[] args) {
 			//TestSortedUnion.Test();
-			TestFibonacci.Test();
+			//TestFibonacci.Test();
+			//PrimeFactorSpeedTest.Test();
 		}
 	}
 }
