@@ -7,7 +7,7 @@ namespace Testing {
 	static class TestFibonacci {
 
 		public static void Test() {
-			IEnumerable<int> result = Fibonacci.Generate();
+			IEnumerable<int> result = Utils.Fibonacci();
 
 			Console.WriteLine("Expected: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89");
 			Console.WriteLine("Actual  : {0}", string.Join(", ", result.Take(10)));

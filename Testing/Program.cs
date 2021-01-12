@@ -6,6 +6,7 @@ namespace Testing {
 			//TestSortedUnion.Test();
 			//TestFibonacci.Test();
 			//PrimeFactorSpeedTest.Test();
+			TestPrimes.Test();
 		}
 	}
 }

@@ -17,7 +17,7 @@ namespace ProjectEuler.Puzzles {
 		/// <inheritdoc/>
 		public override object Solve() {
 			int[] numbers = Enumerable.Range(1, 100).ToArray();
-			return numbers.Combinations().Select(x => 2 * x.Item1 * x.Item2).Sum();
+			return numbers.Combinations().Select(x => 2 * x.Item1 * x.Item2).Sum(); //See Puzzle0006.pdf
 		}
 	}
 }
