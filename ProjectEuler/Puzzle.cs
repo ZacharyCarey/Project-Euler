@@ -56,7 +56,7 @@ namespace ProjectEuler {
 		/// Reads the resource file associated with the puzzle by returning each line of the file.
 		/// </summary>
 		/// <returns>An <see cref="IEnumerable{T}"/> of each line read from the resource file associated with the puzzle.</returns>
-		protected IEnumerable<string> ReadLines() {
+		protected IEnumerable<string> ReadResourceLines() {
 			return File.ReadLines(GetResourcePath());
 		}
 
