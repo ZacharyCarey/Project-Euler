@@ -7,16 +7,16 @@ using ProjectEuler.Common;
 namespace ProjectEuler.Puzzles {
 
 	/// <summary>
-	/// A class representing the solution to <c>https://projecteuler.net/problem=7</c>.
+	/// A class representing the solution to <c>https://projecteuler.net/problem=10</c>.
 	/// </summary>
-	sealed class Puzzle0007 : Puzzle {
+	sealed class Puzzle0010 : Puzzle {
 
 		/// <inheritdoc/>
-		public override string Question => "What is the 10 001st prime number?";
+		public override string Question => "Find the sum of all the primes below two million.";
 
 		/// <inheritdoc/>
 		public override object Solve() {
-			return Utils.Primes.ElementAt(10000);
+			return Utils.Primes.TakeWhile(x => x < 2000000).Sum();
 		}
 	}
 }

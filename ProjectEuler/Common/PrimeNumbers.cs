@@ -6,6 +6,8 @@ using System.Text;
 namespace ProjectEuler.Common {
 	public static partial class Utils {
 
+        public static IEnumerable<long> Primes => PrimeGenerator();
+
         private const int SieveSize = 10000;
 
         private static HashSet<long> composite = new HashSet<long>();
@@ -14,7 +16,7 @@ namespace ProjectEuler.Common {
         private static long currentLimit = 0;
 
 
-        public static IEnumerable<long> Primes() {
+        private static IEnumerable<long> PrimeGenerator() {
             foreach(long prime in foundPrimes) {
                 yield return prime;
 			}
