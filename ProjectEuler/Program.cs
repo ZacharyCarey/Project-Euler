@@ -6,7 +6,7 @@ namespace ProjectEuler {
 	class Program {
 
 		static void Main(string[] args) {
-			Puzzle CurrentPuzzle = new Puzzle0010();
+			Puzzle CurrentPuzzle = new Puzzle0011();
 
 			if (!Debugger.IsAttached) {
 				CurrentPuzzle = null;
