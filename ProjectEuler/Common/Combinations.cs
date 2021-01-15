@@ -14,5 +14,19 @@ namespace ProjectEuler.Common {
 			}
         }
 
+        //With n number of elements return the number of different combinations that can be made
+        //For example: n = 4 [1, 2, 3, 4]
+        //Would return 15
+        // 1, 2, 3, 4
+        // 12, 13, 14
+        // 23, 24
+        // 34
+        // 123, 124, 134
+        // 234
+        // 1234
+        public static int NumberOfCombinations(int numberOfElements) {
+            return (numberOfElements * numberOfElements) - 1;
+		}
+
     }
 }
