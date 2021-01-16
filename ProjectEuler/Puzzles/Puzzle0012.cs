@@ -19,6 +19,7 @@ namespace ProjectEuler.Puzzles {
 			long triangle = 0;
 			foreach(long natural in NaturalNumbers()) {
 				triangle += natural;
+				//TODO Whhhhyyyyy does the long version take 3 times as long to run on dad's computer compared to the int version?!?
 				long numDivisors = triangle.NumberOfDivisors(); //getNumDivisors(triangle);
 				if(numDivisors > 500) {
 					return triangle;
