@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace ProjectEuler.Common {
 	public static partial class Utils {
@@ -118,6 +119,14 @@ namespace ProjectEuler.Common {
 			foreach (T element in source) {
 				yield return (index++, element);
 			}
+		}
+
+		public static BigInteger Sum(this IEnumerable<BigInteger> source) {
+			BigInteger result = BigInteger.Zero;
+			foreach(BigInteger element in source) {
+				result += element;
+			}
+			return result;
 		}
 
 	}
