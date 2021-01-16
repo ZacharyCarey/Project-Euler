@@ -28,5 +28,15 @@ namespace ProjectEuler.Common {
             return (numberOfElements * numberOfElements) - 1;
 		}
 
+        public static long Ck(long n, long k) {
+            long r = 1;
+            if (k > n) return 0;
+            for(int d = 1; d <= k; d++) {
+                r *= n--;
+                r /= d;
+			}
+            return r;
+		}
+
     }
 }
