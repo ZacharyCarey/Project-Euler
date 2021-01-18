@@ -23,7 +23,7 @@ namespace ProjectEuler.Puzzles {
 					if (date.DayOfWeek == DayOfWeek.Sunday) {
 						sundays++;
 					}
-					date.AddMonths(1);
+					date = date.AddMonths(1);
 				}
 			}
 
