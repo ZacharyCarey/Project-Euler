@@ -94,6 +94,34 @@ namespace ProjectEuler.Common {
 			}
 		}
 
+		/// <summary>
+		/// Gets all string elements separated by the given deliminator
+		/// </summary>
+		/// <param name="source"></param>
+		/// <returns></returns>
+		public static IEnumerable<string> GetElements(this IEnumerable<string> source, char delim) {
+			foreach (string line in source) {
+				string[] elements = line.Split(delim);
+				foreach (string element in elements) {
+					yield return element;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Gets all string elements separated by the given deliminator
+		/// </summary>
+		/// <param name="source"></param>
+		/// <returns></returns>
+		public static IEnumerable<string> GetElements(this IEnumerable<string> source, string delim) {
+			foreach (string line in source) {
+				string[] elements = line.Split(delim);
+				foreach (string element in elements) {
+					yield return element;
+				}
+			}
+		}
+
 		public static IEnumerable<T> Concat<T>(this IEnumerable<T> source, T newElement) {
 			if (source == null) throw new ArgumentNullException("source", "Enumberable was null.");
 			foreach (T element in source) yield return element;
