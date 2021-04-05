@@ -11,13 +11,15 @@ namespace ProjectEuler.Common {
 		/// <param name="n"></param>
 		/// <param name="skipN">Skip the last divisor that is also the number passes, n</param>
 		/// <returns></returns>
-		public static IEnumerable<int> Divisors(this int n, bool skipN = false) {
+		public static IEnumerable<int> Divisors(this int n, bool Proper = false) {
 			yield return 1;
-			if (!skipN) yield return n;
+			if (!Proper) yield return n;
 			for (int i = 2; i <= (int)Math.Sqrt(n); i++) {
 				if ((n % i) == 0) {
 					yield return i;
-					yield return n / i;
+					if (n / i != i) {
+						yield return n / i;
+					}
 				}
 			}
 		}
@@ -28,13 +30,15 @@ namespace ProjectEuler.Common {
 		/// <param name="n"></param>
 		/// <param name="skipN">Skip the last divisor that is also the number passes, n</param>
 		/// <returns></returns>
-		public static IEnumerable<long> Divisors(this long n, bool skipN = false) {
+		public static IEnumerable<long> Divisors(this long n, bool Proper = false) {
 			yield return 1;
-			if (!skipN) yield return n;
+			if (!Proper) yield return n;
 			for (long i = 2; i <= (long)Math.Sqrt(n); i++) {
 				if ((n % i) == 0) {
 					yield return i;
-					yield return n / i;
+					if (n / i != i) {
+						yield return n / i;
+					}
 				}
 			}
 		}
@@ -45,8 +49,8 @@ namespace ProjectEuler.Common {
 		/// <param name="n"></param>
 		/// <param name="skipN">Skip the last divisor that is also the number passes, n</param>
 		/// <returns></returns>
-		public static long NumberOfDivisors(this int n, bool skipN = false) {
-			int count = (skipN ? 1 : 2);
+		public static long NumberOfDivisors(this int n, bool Proper = false) {
+			int count = (Proper ? 1 : 2);
 			for (int i = 2; i <= (int)Math.Sqrt(n); i++) {
 				if ((n % i) == 0) {
 					count += 2;
@@ -61,8 +65,8 @@ namespace ProjectEuler.Common {
 		/// <param name="n"></param>
 		/// <param name="skipN">Skip the last divisor that is also the number passes, n</param>
 		/// <returns></returns>
-		public static long NumberOfDivisors(this long n, bool skipN = false) {
-			long count = (skipN ? 1 : 2);
+		public static long NumberOfDivisors(this long n, bool Proper = false) {
+			long count = (Proper ? 1 : 2);
 			for (long i = 2; i <= (long)Math.Sqrt(n); i++) {
 				if ((n % i) == 0) {
 					count += 2;
