@@ -227,17 +227,17 @@ namespace ProjectEuler.Common {
             factorial *= depth;
             if (depth + 1 < items.ElementCount) {
                 // Subtract the returned offset
-                n -= PermutateN(items, n, factorial, depth + 1);
+                n = PermutateN(items, n, factorial, depth + 1);
             }
 
             int index = n / factorial;
             int targetIndex = items.ElementCount - depth - 1;
             Bubble(items, targetIndex + index, targetIndex);
 
-            return index * factorial; // The n offset for the previous depth
+            return n % factorial; // The n offset for the previous depth
 		}
 
-        //Probably inefficient way to move items
+        //Probably inefficient way to move items but we will keep it for now
         private static void Bubble<T>(Swapable<T> items, int index, int targetIndex) {
             while (index > targetIndex){
                 items.Swap(index, index - 1);

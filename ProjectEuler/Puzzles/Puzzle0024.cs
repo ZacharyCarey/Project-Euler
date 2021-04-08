@@ -16,12 +16,9 @@ namespace ProjectEuler.Puzzles {
 
 		/// <inheritdoc/>
 		public override object Solve() {
-			int[] elements = new int[] { 0, 1, 2, 3 };
-			Console.WriteLine("Original: {0}", string.Join(", ", elements));
-			for (int i = 0; i < 24; i++) {
-				Console.WriteLine(string.Join(", ", elements.LexicographicPermutationN(i)));
-			}
-			return null;
+			int[] elements = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+			int index = 1000000 - 1;
+			return string.Join("", elements.LexicographicPermutationN(index));
 		}
 	}
 }
